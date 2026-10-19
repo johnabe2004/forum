@@ -34,7 +34,22 @@ const __dirname = path.dirname(__filename);
 // ============================================================
 
 const app = express();
-app.use(cors());
+
+// DirectAdmin (Apache/Nginx + Passenger) sits in front of Node as a reverse
+// proxy. Trusting it lets express-rate-limit see the real client IP.
+app.set("trust proxy", 1);
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      // Allow non-browser clients (no Origin header) and configured frontends.
+      if (!origin || env.frontendUrls.includes(origin)) {
+        return callback(null, true);
+      }
+      return callback(null, false);
+    },
+  }),
+);
 app.use(express.json({ limit: "100kb" }));
 
 // Serve uploaded assets (avatars, documents)
