@@ -1,6 +1,16 @@
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import dotenv from "dotenv";
 
-dotenv.config();
+// Resolve paths from the backend folder rather than the process working
+// directory, which differs between `npm start` and hosting panels such as
+// DirectAdmin's Node.js selector (Passenger).
+const backendRoot = path.resolve(
+  path.dirname(fileURLToPath(import.meta.url)),
+  "../..",
+);
+
+dotenv.config({ path: path.join(backendRoot, ".env") });
 
 const numberFromEnv = (value, fallback) => {
   const parsed = Number(value);
@@ -8,6 +18,7 @@ const numberFromEnv = (value, fallback) => {
 };
 
 const env = {
+  backendRoot,
   port: process.env.PORT || 4000,
 
   database: {
@@ -16,9 +27,20 @@ const env = {
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     name: process.env.DB_NAME,
+    // Hosted MySQL services (Aiven, TiDB Cloud, ...) require TLS.
+    ssl:
+      process.env.DB_SSL === "true" ? { rejectUnauthorized: false } : undefined,
   },
   jwtSecret: process.env.JWT_SECRET,
-  frontendUrl: process.env.FRONTEND_URL || "http://localhost:5173",
+  // FRONTEND_URL may list several origins separated by commas; the first one
+  // is used to build links in emails.
+  frontendUrls: (process.env.FRONTEND_URL || "http://localhost:5173")
+    .split(",")
+    .map((url) => url.trim().replace(/\/+$/, ""))
+    .filter(Boolean),
+  get frontendUrl() {
+    return this.frontendUrls[0];
+  },
 
   emailUser: process.env.EMAIL_USER,
   emailPass: process.env.EMAIL_PASS,

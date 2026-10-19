@@ -8,6 +8,7 @@ export async function initializeDatabase() {
     port: env.database.port,
     user: env.database.user,
     password: env.database.password,
+    ssl: env.database.ssl,
     database: env.database.name,
   });
 
