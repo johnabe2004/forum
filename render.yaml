@@ -1,0 +1,38 @@
+# Render Blueprint: New -> Blueprint -> pick this repo.
+services:
+  - type: web
+    name: forum-api
+    runtime: node
+    plan: free
+    rootDir: backend
+    # Remove node_modules committed from Windows so Linux packages get installed.
+    buildCommand: rm -rf node_modules && npm install --omit=dev
+    startCommand: node index.js
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NODE_ENV
+        value: production
+      - key: FRONTEND_URL
+        value: https://forum.baruchictsolution.com
+      - key: DB_SSL
+        value: "true"
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_NAME
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-3.6-flash
+      - key: GEMINI_EMBEDDING_MODEL
+        value: gemini-embedding-2
