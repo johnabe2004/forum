@@ -4,7 +4,7 @@ import crypto from "node:crypto";
 import multer from "multer";
 import env from "../config/env.js";
 
-const uploadDirectory = path.resolve(process.cwd(), env.rag.uploadDir);
+const uploadDirectory = path.resolve(env.backendRoot, env.rag.uploadDir);
 
 // Make sure the upload directory exists.
 fs.mkdirSync(uploadDirectory, { recursive: true });
