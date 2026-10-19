@@ -1,0 +1,17 @@
+# Send every unknown path to index.html so React Router can handle
+# deep links like /dashboard or /questions/abc after a page refresh.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# config.js is edited on the server; never let browsers or Cloudflare cache it.
+<IfModule mod_headers.c>
+  <Files "config.js">
+    Header set Cache-Control "no-store, max-age=0"
+  </Files>
+</IfModule>
