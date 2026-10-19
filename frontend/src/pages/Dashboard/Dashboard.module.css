@@ -1,0 +1,267 @@
+.page {
+  display: grid;
+  gap: 32px;
+}
+
+.welcomeCard,
+.feed,
+.empty {
+  border: 1px solid #dbe3ee;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.welcomeCard {
+  padding: 31px 32px;
+}
+
+.eyebrow {
+  display: block;
+  color: #ea580c;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.welcomeCard h2 {
+  margin-top: 7px;
+  font-size: 31px;
+  letter-spacing: -0.03em;
+}
+
+.welcomeCard > p {
+  max-width: 720px;
+  margin-top: 8px;
+  color: #334155;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.quickLinks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.quickLinks button {
+  display: grid;
+  grid-template-columns: 55px 1fr;
+  align-items: center;
+  padding: 15px 18px;
+  border: 1px solid #dbe3ee;
+  border-radius: 8px;
+  text-align: left;
+  background: #f8fafc;
+  cursor: pointer;
+  transition:
+    border-color 0.16s ease,
+    background-color 0.16s ease,
+    transform 0.16s ease;
+}
+
+.quickLinks button:hover {
+  border-color: #fb923c;
+  background: #fff;
+  transform: translateY(-1px);
+}
+
+.quickLinks span {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  grid-row: span 2;
+  place-items: center;
+  border: 1px solid #dbe3ee;
+  border-radius: 9px;
+  color: #ff6d11;
+  background: #f1f5f9;
+}
+
+.quickLinks b {
+  color: #0f172a;
+  font-size: 14px;
+}
+
+.quickLinks small {
+  color: #475569;
+  font-size: 12px;
+}
+
+.metricsIntro {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid #dbe3ee;
+  color: #475569;
+  font-size: 12px;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.metrics div {
+  padding: 16px;
+  border: 1px solid #dbe3ee;
+  border-radius: 8px;
+  background: #f1f5f9;
+}
+
+.metrics small,
+.metrics strong {
+  display: block;
+}
+
+.metrics small {
+  color: #475569;
+  font-size: 12px;
+}
+
+.metrics strong {
+  margin-top: 4px;
+  font-size: 20px;
+}
+
+.feed {
+  overflow: hidden;
+}
+
+.feed > :last-child {
+  border-bottom: 0;
+}
+
+.feedHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 32px;
+  background: #f1f5f9;
+}
+
+.feedHeader h2 {
+  font-size: 18px;
+}
+
+.feedHeader p {
+  margin-top: 2px;
+  color: #475569;
+  font-size: 12px;
+}
+
+.feedHeader > span {
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: #fff;
+  background: #ff6d11;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.loading,
+.error,
+.empty {
+  padding: 36px;
+  color: #475569;
+  text-align: center;
+}
+
+.error {
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  color: #b91c1c;
+  background: #fef2f2;
+  text-align: left;
+}
+
+.empty h3 {
+  font-size: 18px;
+}
+
+.empty p {
+  margin: 6px 0 18px;
+}
+
+.empty button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 14px;
+  border: 0;
+  border-radius: 7px;
+  color: #fff;
+  background: #ff6d11;
+  cursor: pointer;
+  transition: background-color 0.16s ease;
+}
+
+.empty button:hover {
+  background: #e95d05;
+}
+
+@media (max-width: 800px) {
+  .welcomeCard {
+    padding: 24px;
+  }
+
+  .quickLinks,
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .feedHeader {
+    padding: 20px;
+  }
+}
+
+:global(html[data-theme="dark"]) .welcomeCard,
+:global(html[data-theme="dark"]) .feed,
+:global(html[data-theme="dark"]) .empty {
+  border-color: var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+:global(html[data-theme="dark"]) .welcomeCard > p,
+:global(html[data-theme="dark"]) .quickLinks small,
+:global(html[data-theme="dark"]) .metricsIntro,
+:global(html[data-theme="dark"]) .metrics small,
+:global(html[data-theme="dark"]) .feedHeader p,
+:global(html[data-theme="dark"]) .loading,
+:global(html[data-theme="dark"]) .empty {
+  color: var(--text-secondary);
+}
+
+:global(html[data-theme="dark"]) .quickLinks button,
+:global(html[data-theme="dark"]) .metrics div,
+:global(html[data-theme="dark"]) .feedHeader,
+:global(html[data-theme="dark"]) .quickLinks span {
+  border-color: var(--border);
+  background: var(--surface-container-low);
+}
+
+:global(html[data-theme="dark"]) .quickLinks button:hover {
+  border-color: var(--primary);
+  background: var(--surface-highlight);
+}
+
+:global(html[data-theme="dark"]) .quickLinks b {
+  color: var(--text-primary);
+}
+
+:global(html[data-theme="dark"]) .metricsIntro,
+:global(html[data-theme="dark"]) .feed > :last-child {
+  border-color: var(--border);
+}
+
+:global(html[data-theme="dark"]) .error {
+  border-color: #7f1d1d;
+  color: #fecaca;
+  background: #450a0a;
+}

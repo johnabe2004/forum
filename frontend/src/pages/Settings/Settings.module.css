@@ -1,0 +1,454 @@
+.settingsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ============================================================
+   TOP HEADER
+   ============================================================ */
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 4px 0;
+}
+
+.headerIconSquircle {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: #e0f2fe;
+  border: 1px solid #bae6fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0284c7;
+  flex-shrink: 0;
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+}
+
+.headerText h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.headerText p {
+  font-size: 14px;
+  color: #64748b;
+  margin: 4px 0 0;
+}
+
+/* ============================================================
+   SETTINGS GRID (TWO COLUMNS)
+   ============================================================ */
+
+.settingsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+@media (max-width: 960px) {
+  .settingsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+
+.card {
+  background: #ffffff;
+  border: 1px solid #dbe3ee;
+  border-radius: 16px;
+  padding: 28px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+  min-height: 430px;
+  box-sizing: border-box;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.accountBadge {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #e0e7ff;
+  border: 1px solid #c7d2fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4f46e5;
+  flex-shrink: 0;
+}
+
+.passwordBadge {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #dcfce7;
+  border: 1px solid #bbf7d0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #16a34a;
+  flex-shrink: 0;
+}
+
+.cardHeaderText {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardHeaderText h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 3px;
+}
+
+.cardHeaderText p {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ============================================================
+   FEEDBACK BANNER
+   ============================================================ */
+
+.alert {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  animation: fadeIn 0.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.alertSuccess {
+  background-color: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.alertError {
+  background-color: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+/* ============================================================
+   FORMS & INPUTS
+   ============================================================ */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.nameRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 560px) {
+  .nameRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 13px;
+  color: #64748b;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.inputWrapper input {
+  width: 100%;
+  padding: 11px 14px 11px 40px;
+  background: #ffffff;
+  border: 1px solid #dbe3ee;
+  border-radius: 8px;
+  color: #0f172a;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.18s ease;
+  box-sizing: border-box;
+}
+
+.inputWrapper input:focus {
+  outline: none;
+  border-color: #ea580c;
+}
+
+.inputWrapper input::placeholder {
+  color: #94a3b8;
+}
+
+.eyeToggle {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  transition: color 0.15s ease;
+}
+
+.eyeToggle:hover {
+  color: #0f172a;
+}
+
+.helperText {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 3px;
+}
+
+/* ============================================================
+   ACTION BUTTONS
+   ============================================================ */
+
+.cardActionRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 32px;
+  padding-top: 10px;
+}
+
+.passwordActionRow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 32px;
+  padding-top: 10px;
+}
+
+.cancelButton {
+  background: #f1f5f9;
+  border: 1px solid #dbe3ee;
+  border-radius: 8px;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cancelButton:hover:not(:disabled) {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.cancelButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.saveChangesButton {
+  background: #ff6b0b;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 22px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.15s ease;
+}
+
+.saveChangesButton:hover:not(:disabled) {
+  background: #e95d05;
+}
+
+.saveChangesButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.updatePasswordButton {
+  background: #ff6b0b;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 22px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.15s ease;
+}
+
+.updatePasswordButton:hover:not(:disabled) {
+  background: #e95d05;
+}
+
+.updatePasswordButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ============================================================
+   DARK MODE OVERRIDES (Matching original dark design)
+   ============================================================ */
+
+:global(html[data-theme="dark"]) .headerIconSquircle {
+  background: rgba(56, 189, 248, 0.12);
+  border-color: rgba(56, 189, 248, 0.25);
+  color: #38bdf8;
+}
+
+:global(html[data-theme="dark"]) .headerText h2 {
+  color: #ffffff;
+}
+
+:global(html[data-theme="dark"]) .headerText p {
+  color: #94a3b8;
+}
+
+:global(html[data-theme="dark"]) .card {
+  background: #0b1426;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+}
+
+:global(html[data-theme="dark"]) .accountBadge {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.35);
+  color: #818cf8;
+}
+
+:global(html[data-theme="dark"]) .passwordBadge {
+  background: rgba(16, 185, 129, 0.2);
+  border-color: rgba(16, 185, 129, 0.35);
+  color: #34d399;
+}
+
+:global(html[data-theme="dark"]) .cardHeaderText h3 {
+  color: #ffffff;
+}
+
+:global(html[data-theme="dark"]) .cardHeaderText p {
+  color: #94a3b8;
+}
+
+:global(html[data-theme="dark"]) .alertSuccess {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+:global(html[data-theme="dark"]) .alertError {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+:global(html[data-theme="dark"]) .field label {
+  color: #ffffff;
+}
+
+:global(html[data-theme="dark"]) .inputIcon {
+  color: #64748b;
+}
+
+:global(html[data-theme="dark"]) .inputWrapper input {
+  background: #070e1c;
+  border-color: #1c273e;
+  color: #ffffff;
+}
+
+:global(html[data-theme="dark"]) .inputWrapper input:focus {
+  border-color: #38bdf8;
+}
+
+:global(html[data-theme="dark"]) .inputWrapper input::placeholder {
+  color: #475569;
+}
+
+:global(html[data-theme="dark"]) .eyeToggle {
+  color: #64748b;
+}
+
+:global(html[data-theme="dark"]) .eyeToggle:hover {
+  color: #cbd5e1;
+}
+
+:global(html[data-theme="dark"]) .helperText {
+  color: #94a3b8;
+}
+
+:global(html[data-theme="dark"]) .cancelButton {
+  background: #141f36;
+  border-color: #22324f;
+  color: #ffffff;
+}
+
+:global(html[data-theme="dark"]) .cancelButton:hover:not(:disabled) {
+  background: #1c2b4a;
+}

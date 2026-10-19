@@ -1,0 +1,127 @@
+:root {
+  /* ============================================================
+     COLOR TOKENS — Light indigo/violet theme
+     ============================================================ */
+
+  --background: #f7f9fc;
+  --surface: #ffffff;
+  --surface-container-low: #f1f5f9;
+  --surface-highlight: #fff7ed;
+
+  --primary: #ea580c;
+  --primary-hover: #c2410c;
+  --primary-dark: #9a3412;
+  --primary-light: #ffedd5;
+  --primary-container: #fed7aa;
+
+  --tertiary: #7c2d12;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #64748b;
+  --text-inverse: #ffffff;
+  --text-placeholder: #9ca3af;
+
+  --border: #dbe3ee;
+  --border-hover: #cbd5e1;
+
+  /* ============================================================
+     ELEVATION
+     ============================================================ */
+
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
+  --shadow-md: 0 8px 24px rgba(16, 24, 40, 0.12);
+
+  /* ============================================================
+     BORDER RADIUS
+     ============================================================ */
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  /* ============================================================
+     SPACING SCALE (4px base)
+     ============================================================ */
+
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4.5rem;
+
+  /* ============================================================
+     TYPOGRAPHY
+     ============================================================ */
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* ============================================================
+     MOTION
+     ============================================================ */
+
+  --transition-fast: 0.15s ease;
+
+  /* ============================================================
+     LAYOUT
+     ============================================================ */
+
+  --app-content-max: 80rem;
+  --app-form-max: 26rem;
+  --app-prose-max: 65ch;
+}
+
+:root[data-theme="dark"] {
+  --background: #0f172a;
+  --surface: #111827;
+  --surface-container-low: #1e293b;
+  --surface-highlight: #3b2819;
+
+  --primary-light: #4a2810;
+  --primary-container: #9a3412;
+  --tertiary: #fed7aa;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --text-placeholder: #94a3b8;
+  --text-inverse: #ffffff;
+
+  --border: #334155;
+  --border-hover: #475569;
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 18%);
+  --shadow-md: 0 12px 28px rgb(0 0 0 / 32%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}

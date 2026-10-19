@@ -1,0 +1,439 @@
+/* ============================================================
+   AUTH PAGE
+   ============================================================
+   Split layout: branding panel (left, on desktop) + form card
+   (right). Below the md breakpoint the two stack vertically. 
+   */
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background);
+}
+
+@media (min-width: 768px) {
+  .page {
+    flex-direction: row;
+  }
+}
+
+/* ============================================================
+   LEFT: BRANDING PANEL
+   ============================================================ */
+
+.infoPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  background: linear-gradient(
+    155deg,
+    var(--primary) 0%,
+    var(--primary-hover) 48%,
+    var(--primary-dark) 100%
+  );
+  color: var(--text-inverse);
+}
+
+@media (min-width: 768px) {
+  .infoPanel {
+    width: 45%;
+    padding: 4rem;
+  }
+}
+
+.infoContent {
+  max-width: var(--app-prose-max, 32rem);
+  margin: 0 auto;
+}
+
+.infoHeader {
+  margin-bottom: 2.5rem;
+}
+
+.infoBranding {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: inherit;
+  text-align: left;
+  padding: 0;
+  margin-bottom: var(--spacing-lg);
+}
+
+.infoLogo {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.96);
+  border-radius: var(--radius-md);
+}
+
+.infoLogoIcon {
+  color: var(--primary);
+}
+
+.infoTitle {
+  margin: 0;
+  font-size: var(--text-2xl);
+  font-weight: var(--font-semibold);
+  color: var(--text-inverse);
+}
+
+.infoTagline {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.infoDescription {
+  margin: 0;
+  font-size: var(--text-base);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* ============================================================
+   FEATURE CARDS
+   ============================================================ */
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.feature {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(10px);
+}
+
+.featureIcon {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+}
+
+.featureTitle {
+  margin: 0 0 0.25rem;
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--text-inverse);
+}
+
+.featureDescription {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.55;
+}
+
+.infoFooter {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.infoFooterContent {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.infoAvatars {
+  display: flex;
+  margin-left: 0.5rem;
+}
+
+.infoAvatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-left: -0.5rem;
+  border: 2px solid white;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.infoBadge {
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--radius-md);
+  background-color: rgba(255, 255, 255, 0.2);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+}
+
+/* ============================================================
+   RIGHT: FORM CARD
+   ============================================================ */
+
+.formSection {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .formSection {
+    width: 55%;
+    padding: 4rem;
+  }
+}
+
+.formCard {
+  width: 100%;
+  max-width: var(--app-form-max, 28rem);
+  padding: var(--spacing-xl);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+}
+
+@media (min-width: 768px) {
+  .formCard {
+    padding: var(--spacing-2xl);
+  }
+}
+
+.formHeader {
+  margin-bottom: 1.75rem;
+}
+
+.formHeader h1 {
+  font-size: var(--text-2xl);
+  margin: 0 0 0.375rem;
+}
+
+.formHeader p {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--text-primary);
+}
+
+.field input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: var(--text-base);
+  color: var(--text-primary);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.field input:hover {
+  border-color: var(--border-hover);
+}
+
+/* Wraps the password input so the show/hide icon can be
+   absolutely positioned inside it. */
+.passwordWrap {
+  position: relative;
+}
+
+.passwordWrap input {
+  padding-right: 2.75rem;
+}
+
+.passwordToggle {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  color: var(--text-secondary);
+  background: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.passwordToggle:hover {
+  color: var(--text-primary);
+  background-color: var(--surface-container-low);
+}
+
+.success {
+  padding: 0.75rem 1rem;
+  color: #15803d;
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+.divider {
+  position: relative;
+  margin: 1.5rem 0;
+  text-align: center;
+  color: var(--text-placeholder);
+  font-size: 0.625rem;
+  font-weight: var(--font-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: 1px;
+  background: var(--border);
+}
+
+.divider span {
+  position: relative;
+  padding: 0 1rem;
+  background: var(--surface);
+}
+
+/* ============================================================
+   ERROR MESSAGE
+   ============================================================ */
+
+.error {
+  padding: 0.75rem 1rem;
+  font-size: var(--text-sm);
+  color: #dc2626;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-md);
+}
+
+/* ============================================================
+   SUBMIT BUTTON
+   ============================================================ */
+
+.submitButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  color: var(--text-inverse);
+  background-color: var(--primary);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.submitButton:hover {
+  background-color: var(--primary-container);
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ============================================================
+   FOOTER (TOGGLE LOGIN / REGISTER)
+   ============================================================ */
+
+.switch {
+  margin-top: 1.75rem;
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.switchButton {
+  color: var(--primary);
+  font-weight: var(--font-medium);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.switchButton:hover {
+  color: var(--primary-container);
+  text-decoration: underline;
+}
+
+:global(html[data-theme="dark"]) .success {
+  border-color: #166534;
+  color: #bbf7d0;
+  background: #052e16;
+}
+
+:global(html[data-theme="dark"]) .error {
+  border-color: #7f1d1d;
+  color: #fecaca;
+  background: #450a0a;
+}
+
+/* ============================================================
+   ✨ FIXED INTEGRATION: FORGOT PASSWORD INTERFACE CONTROLS
+   ============================================================ */
+
+.forgotLinkRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -6px;
+  margin-bottom: 14px;
+}
+
+.forgotTextButton {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  transition: color 0.15s ease;
+}
+
+.forgotTextButton:hover {
+  color: var(--primary-container);
+  text-decoration: underline;
+}

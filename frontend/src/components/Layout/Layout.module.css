@@ -1,0 +1,125 @@
+.shell {
+  min-height: 100vh;
+  background: #f7f9fc;
+  position: relative;
+}
+
+.content {
+  min-width: 0;
+  min-height: 100vh;
+  /* Reserve space for full sidebar (248px) */
+  margin-left: 248px;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contentExpanded {
+  /* Reserve space for compact sidebar rail (52px) */
+  margin-left: 52px;
+}
+
+.backdrop {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .content,
+  .contentExpanded {
+    margin-left: 0;
+  }
+
+  .backdrop {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 25;
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(2px);
+    animation: fadeIn 0.2s ease forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.page {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+  /* Preserve separation above the pinned footer on both short and long pages. */
+  gap: 40px;
+  padding: 19px 25px 0;
+}
+
+.page > footer {
+  flex-shrink: 0;
+  /* Fill unused page height before the footer on short pages. */
+  margin-top: auto;
+  margin-right: -25px;
+  margin-left: -25px;
+  padding: 36px 43px;
+  background: #ffffff;
+}
+
+.page > footer strong {
+  font-size: 18px;
+}
+
+.page > footer p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.page > footer small {
+  font-size: 12px;
+}
+
+.page > footer a {
+  font-size: 14px;
+}
+
+/* Tablet and mobile */
+
+@media (max-width: 900px) {
+  .page {
+    min-height: 0;
+    padding: 20px 20px 0;
+  }
+
+  .page > footer {
+    margin-right: -20px;
+    margin-left: -20px;
+    padding: 28px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 16px 16px 0;
+  }
+
+  .page > footer {
+    margin-right: -16px;
+    margin-left: -16px;
+    padding: 24px 16px;
+  }
+}
+
+:global(html[data-theme="dark"]) .shell {
+  background: var(--background);
+}
+
+:global(html[data-theme="dark"]) .page > footer {
+  background: var(--surface);
+}

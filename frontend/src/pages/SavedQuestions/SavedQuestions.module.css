@@ -1,0 +1,140 @@
+.page {
+  display: grid;
+  gap: 24px;
+}
+
+.hero,
+.list,
+.state,
+.empty {
+  border: 1px solid #dbe3ee;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 31px 32px;
+}
+
+.eyebrow {
+  color: #ea580c;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.hero h2 {
+  margin-top: 7px;
+  font-size: 31px;
+  letter-spacing: -0.03em;
+}
+
+.hero p {
+  max-width: 650px;
+  margin-top: 8px;
+  color: #334155;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.count {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 13px;
+  border: 1px solid #fed7aa;
+  border-radius: 8px;
+  color: #c2410c;
+  background: #fff7ed;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.list {
+  overflow: hidden;
+}
+
+.state,
+.empty {
+  padding: 48px;
+  color: #475569;
+  text-align: center;
+}
+
+.emptyIcon {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  margin: 0 auto 14px;
+  place-items: center;
+  border-radius: 50%;
+  color: #ea580c;
+  background: #fff7ed;
+}
+
+.empty h3 {
+  color: #0f172a;
+  font-size: 18px;
+}
+
+.empty p {
+  max-width: 520px;
+  margin: 7px auto 18px;
+}
+
+.empty button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 15px;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  background: #ff6d11;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.empty button:hover {
+  background: #e95d05;
+}
+
+.error {
+  padding: 14px 16px;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  color: #b91c1c;
+  background: #fef2f2;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 24px;
+    flex-direction: column;
+  }
+}
+
+:global(html[data-theme="dark"]) .hero,
+:global(html[data-theme="dark"]) .list,
+:global(html[data-theme="dark"]) .state,
+:global(html[data-theme="dark"]) .empty {
+  border-color: var(--border);
+  background: var(--surface);
+}
+
+:global(html[data-theme="dark"]) .hero p,
+:global(html[data-theme="dark"]) .state,
+:global(html[data-theme="dark"]) .empty {
+  color: var(--text-secondary);
+}
+
+:global(html[data-theme="dark"]) .empty h3 {
+  color: var(--text-primary);
+}

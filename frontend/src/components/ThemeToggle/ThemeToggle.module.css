@@ -1,0 +1,25 @@
+.themeToggle {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  padding: 0;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--text-secondary);
+  background: var(--surface-container-low);
+  cursor: pointer;
+  transition: background-color 0.16s ease, color 0.16s ease, transform 0.16s ease;
+}
+
+.themeToggle:hover {
+  color: var(--primary);
+  background: var(--surface-highlight);
+  transform: translateY(-1px);
+}
+
+.themeToggle:focus-visible {
+  outline: 3px solid var(--primary-container);
+  outline-offset: 2px;
+}

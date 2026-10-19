@@ -1,0 +1,388 @@
+.adminContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 40px;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 4px 0;
+}
+
+.headerIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg, 12px);
+  background: var(--primary-light, #ffedd5);
+  border: 1px solid var(--primary-container, #fed7aa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary, #ea580c);
+  flex-shrink: 0;
+}
+
+.headerText h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary, #0f172a);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.headerText p {
+  font-size: 14px;
+  color: var(--text-tertiary, #64748b);
+  margin: 4px 0 0;
+}
+
+/* ============================================================
+   STATISTICS CARDS (3-COLUMN GRID)
+   ============================================================ */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.statCard {
+  background: var(--surface, #ffffff);
+  border: 1px solid var(--border, #dbe3ee);
+  border-radius: var(--radius-lg, 12px);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--shadow-sm, 0 1px 2px rgba(16, 24, 40, 0.06));
+}
+
+.statIconWrap {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md, 8px);
+  background: var(--surface-container-low, #f1f5f9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary, #ea580c);
+  flex-shrink: 0;
+}
+
+.statInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.statTitle {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-tertiary, #64748b);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.statValue {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary, #0f172a);
+  margin-top: 2px;
+  line-height: 1.1;
+}
+
+/* ============================================================
+   TABS NAVIGATION
+   ============================================================ */
+.tabsBar {
+  display: flex;
+  gap: 8px;
+  border-bottom: 2px solid var(--border, #dbe3ee);
+  padding-bottom: 2px;
+}
+
+.tabButton {
+  background: none;
+  border: none;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary, #475569);
+  cursor: pointer;
+  border-radius: var(--radius-md, 8px) var(--radius-md, 8px) 0 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+.tabButton:hover {
+  color: var(--primary, #ea580c);
+  background: var(--surface-container-low, #f1f5f9);
+}
+
+.tabButton.activeTab {
+  color: var(--primary, #ea580c);
+  background: transparent;
+}
+
+.tabButton.activeTab::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--primary, #ea580c);
+  border-radius: 3px 3px 0 0;
+}
+
+/* ============================================================
+   CONTENT CARD & SEARCH
+   ============================================================ */
+.contentCard {
+  background: var(--surface, #ffffff);
+  border: 1px solid var(--border, #dbe3ee);
+  border-radius: var(--radius-lg, 12px);
+  padding: 20px;
+  box-shadow: var(--shadow-sm, 0 1px 2px rgba(16, 24, 40, 0.06));
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface-container-low, #f1f5f9);
+  border: 1px solid var(--border, #dbe3ee);
+  border-radius: var(--radius-md, 8px);
+  padding: 8px 14px;
+  max-width: 380px;
+}
+
+.searchBar input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-size: 14px;
+  color: var(--text-primary, #0f172a);
+  outline: none;
+}
+
+.searchBar input::placeholder {
+  color: var(--text-placeholder, #9ca3af);
+}
+
+/* ============================================================
+   TABLE STYLES
+   ============================================================ */
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.dataTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.dataTable th {
+  padding: 12px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-tertiary, #64748b);
+  border-bottom: 1px solid var(--border, #dbe3ee);
+  background: var(--surface-container-low, #f1f5f9);
+}
+
+.dataTable td {
+  padding: 14px;
+  font-size: 14px;
+  color: var(--text-primary, #0f172a);
+  border-bottom: 1px solid var(--border, #dbe3ee);
+  vertical-align: middle;
+}
+
+.dataTable tbody tr:hover {
+  background: var(--surface-container-low, #f8fafc);
+}
+
+.subText {
+  display: block;
+  font-size: 12px;
+  color: var(--text-tertiary, #64748b);
+  margin-top: 2px;
+}
+
+/* Badges */
+.badgeAdmin {
+  display: inline-block;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--primary-light, #ffedd5);
+  color: var(--primary-dark, #9a3412);
+  border: 1px solid var(--primary-container, #fed7aa);
+  border-radius: var(--radius-full, 9999px);
+}
+
+.badgeUser {
+  display: inline-block;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--surface-container-low, #f1f5f9);
+  color: var(--text-secondary, #475569);
+  border: 1px solid var(--border, #dbe3ee);
+  border-radius: var(--radius-full, 9999px);
+}
+
+/* Action Buttons */
+.deleteButton {
+  background: none;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 6px 12px;
+  border-radius: var(--radius-md, 8px);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.deleteButton:hover {
+  background: #fee2e2;
+  border-color: #fca5a5;
+}
+
+.selfLabel {
+  font-size: 13px;
+  color: var(--text-tertiary, #64748b);
+  font-style: italic;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-tertiary, #64748b);
+  font-size: 14px;
+}
+
+/* Feedback alerts */
+.alertSuccess {
+  padding: 12px 16px;
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  border-radius: var(--radius-md, 8px);
+  font-size: 14px;
+}
+
+.alertError {
+  padding: 12px 16px;
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-md, 8px);
+  font-size: 14px;
+}
+
+/* ============================================================
+   CONFIRMATION MODAL
+   ============================================================ */
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.modalBox {
+  background: var(--surface, #ffffff);
+  border-radius: var(--radius-lg, 12px);
+  padding: 24px;
+  max-width: 440px;
+  width: 100%;
+  box-shadow: var(--shadow-md, 0 8px 24px rgba(16, 24, 40, 0.12));
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modalTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary, #0f172a);
+  margin: 0;
+}
+
+.modalMessage {
+  font-size: 14px;
+  color: var(--text-secondary, #475569);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.cancelBtn {
+  background: none;
+  border: 1px solid var(--border, #dbe3ee);
+  color: var(--text-secondary, #475569);
+  padding: 8px 16px;
+  border-radius: var(--radius-md, 8px);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.confirmDeleteBtn {
+  background: #dc2626;
+  border: none;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: var(--radius-md, 8px);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.confirmDeleteBtn:hover {
+  background: #b91c1c;
+}
+
+/* ============================================================
+   RESPONSIVENESS
+   ============================================================ */
+@media (max-width: 768px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .searchBar {
+    max-width: 100%;
+  }
+}

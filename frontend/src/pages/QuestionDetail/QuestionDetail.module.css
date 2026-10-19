@@ -1,0 +1,983 @@
+.page {
+  display: grid;
+  gap: 22px;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding: 0;
+  border: 0;
+  color: #334155;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.back:hover {
+  color: #ea580c;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 288px;
+  gap: 32px;
+  align-items: start;
+}
+
+.questionCard,
+.answerCard,
+.answerForm {
+  padding: 32px;
+  border: 1px solid #dbe3ee;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.avatar {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 50%;
+  color: #0f172a;
+  background: #8ae1ee;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.answerAvatar {
+  background: #5eead4;
+}
+
+.author p {
+  display: grid;
+}
+
+.author b {
+  font-size: 14px;
+}
+
+.author small {
+  color: #475569;
+  font-size: 12px;
+}
+
+.questionCard h1 {
+  margin-top: 27px;
+  color: #0f172a;
+  font-size: 25px;
+  line-height: 1.25;
+}
+
+.questionBody {
+  margin-top: 22px;
+  color: #334155;
+  font-size: 16px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.answerCard > div:not(.editor) {
+  margin-top: 19px;
+  color: #334155;
+  font-size: 15px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.ownerActions {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.ownerActions button,
+.editActions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 7px 10px;
+  border: 1px solid #dbe3ee;
+  border-radius: 7px;
+  color: #475569;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ownerActions button:hover {
+  border-color: #fb923c;
+  color: #ea580c;
+}
+
+.questionCard footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10 16px;
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid #dbe3ee;
+}
+
+.questionCard footer span,
+.shareButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border: 1px solid #dbe3ee;
+  border-radius: 7px;
+  color: #334155;
+  background: #f1f5f9;
+  font-size: 13px;
+}
+
+.shareButton {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.shareButton:hover {
+  border-color: #fb923c;
+  color: #ea580c;
+  background: #fff7ed;
+}
+
+.shareButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.savedButton {
+  border-color: #ea580c;
+  color: #c2410c;
+  background: #fff7ed;
+}
+
+.answersHeading {
+  margin: 34px 0 16px;
+  font-size: 18px;
+}
+
+.emptyAnswers,
+.ownNotice {
+  padding: 18px;
+  border-radius: 8px;
+  color: #475569;
+  background: #f1f5f9;
+  font-size: 14px;
+}
+
+.answerCard {
+  margin-top: 14px;
+}
+
+.answerForm {
+  margin-top: 25px;
+}
+
+.answerForm h2 {
+  font-size: 18px;
+}
+
+.editLabel {
+  display: block;
+  margin-top: 21px;
+  color: #334155;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.questionTitleInput {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 7px;
+  padding: 11px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  color: #0f172a;
+  background: #fff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.questionTitleInput:focus {
+  border-color: #fb923c;
+  outline: 3px solid #ffedd5;
+}
+
+.editor {
+  overflow: hidden;
+  margin-top: 10px;
+  border: 1px solid #dbe3ee;
+  border-radius: 8px;
+}
+
+.editorToolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 41px;
+  padding: 0 12px;
+  color: #475569;
+  background: #f1f5f9;
+  border-bottom: 1px solid #dbe3ee;
+}
+
+.editorToolbar span {
+  margin-left: auto;
+  color: #64748b;
+  font-size: 11px;
+}
+
+.formatButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  color: #475569;
+  background: transparent;
+  cursor: pointer;
+}
+
+.formatButton:hover {
+  color: #ea580c;
+  background: #fff;
+}
+
+.editor textarea {
+  display: block;
+  width: 100%;
+  min-height: 158px;
+  box-sizing: border-box;
+  padding: 14px;
+  resize: vertical;
+  border: 0;
+  color: #0f172a;
+  background: #fff;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.editor textarea:focus {
+  outline: 0;
+}
+
+.editActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+  margin-top: 12px;
+}
+
+.editActions button:last-child {
+  background: #ff6d11 !important;
+  color: #fff !important;
+  border: none !important;
+}
+ 
+.editActions button:last-child:hover {
+  background: #ea580c !important;
+}
+
+.editActions button:not(:last-child) {
+  background: transparent !important;
+  color: #475569 !important;
+  border: 1px solid #cbd5e1 !important;
+  transition: all 0.2s ease !important;
+}
+
+.editActions button:not(:last-child):hover {
+  background: #f1f5f9 !important;
+  color: #334155 !important;
+  border-color: #cbd5e1 !important;
+}
+
+
+.editActions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.answerTools {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.answerTools button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border: 1px solid #fed7aa;
+  border-radius: 7px;
+  color: #c2410c;
+  background: #fff7ed;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.answerTools button:disabled {
+  cursor: not-allowed;
+  opacity: 0.62;
+}
+
+.answerTools small {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.fitPanel {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.fitPanel p {
+  margin-top: 3px;
+}
+
+.fitstrong {
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+  background: #ecfdf5;
+}
+
+.fitpartial {
+  border: 1px solid #fde68a;
+  color: #92400e;
+  background: #fffbeb;
+}
+
+.fitweak {
+  border: 1px solid #fecaca;
+  color: #991b1b;
+  background: #fef2f2;
+}
+
+.submitAnswer {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  background: #ff6d11;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.submitAnswer:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.related h2 {
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+.related > p {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.related a {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding: 16px;
+  border: 1px solid #dbe3ee;
+  border-radius: 8px;
+  color: #ff6d11;
+  background: #fff;
+  text-decoration: none;
+}
+
+.related a:hover {
+  border-color: #fb923c;
+}
+
+.related a b {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.related a small {
+  color: #475569;
+  font-size: 11px;
+}
+
+.state,
+.error {
+  padding: 25px;
+  border-radius: 10px;
+  color: #475569;
+  background: #fff;
+  text-align: center;
+}
+
+.error {
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  background: #fef2f2;
+  text-align: left;
+}
+
+.inlineError {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  color: #b91c1c;
+  background: #fef2f2;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.toast {
+  position: fixed;
+  z-index: 50;
+  right: 24px;
+  bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  max-width: min(420px, calc(100vw - 48px));
+  padding: 12px 13px;
+  border: 1px solid #a7f3d0;
+  border-radius: 8px;
+  color: #065f46;
+  background: #ecfdf5;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.14);
+  font-size: 13px;
+}
+
+.toast button {
+  display: grid;
+  margin-left: 4px;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+
+.modalBackdrop {
+  position: fixed;
+  z-index: 60;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.45);
+}
+
+.modal {
+  width: min(100%, 420px);
+  padding: 24px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 22px 48px rgba(15, 23, 42, 0.25);
+}
+
+.modal h2 {
+  color: #0f172a;
+  font-size: 18px;
+}
+
+.modal p {
+  margin-top: 8px;
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.modal > div {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+  margin-top: 22px;
+}
+
+.modal button {
+  min-height: 35px;
+  padding: 0 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  color: #334155;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+   transition: all 0.2s ease !important;
+}
+
+
+
+.modal button:last-child {
+  border-color: #dc2626;
+  color: #fff;
+  background: #dc2626;
+}
+
+.modal button:last-child:hover {
+  background: #b91c1c !important;
+  color: #ffffff !important;
+  border-color: #b91c1c !important;
+}
+.modal button:not(:last-child):hover {
+  background: #f1f5f9 !important;
+  color: #334155 !important;
+  border-color: #cbd5e1 !important;
+}
+
+.modal button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+@media (max-width: 920px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .related {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+  }
+
+  .related h2 {
+    grid-column: 1 / -1;
+  }
+
+  .related a {
+    margin: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .questionCard,
+  .answerCard,
+  .answerForm {
+    padding: 22px;
+  }
+
+  .questionCard h1 {
+    font-size: 22px;
+  }
+
+  .answerTools {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .editorToolbar {
+    gap: 4px;
+    padding: 0 8px;
+  }
+
+  .editorToolbar span {
+    font-size: 10px;
+  }
+}
+
+/* ==========================================================================
+   NESTED REPLIES & ACTIONS STYLES (LIGHT THEME)
+   ========================================================================== */
+
+.repliesWrapper {
+  margin-top: 18px;
+}
+
+/* Primary Trigger Button - Matches .shareButton exactly */
+.replyActionButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border: 1px solid #dbe3ee;
+  border-radius: 7px;
+  color: #334155;
+  background: #f1f5f9;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.replyActionButton:hover {
+  border-color: #fb923c;
+  color: #ea580c;
+  background: #fff7ed;
+}
+
+/* Dropdown Container */
+.repliesDropdownContent {
+  margin-top: 12px;
+  padding: 16px;
+  border: 1px solid #dbe3ee;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+/* Scroll list layer */
+.repliesScrollArea {
+  max-height: 250px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-right: 4px;
+}
+
+/* Individual Nested Reply Box */
+.nestedReplyItem {
+  padding: 10px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.nestedReplyHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.nestedReplyUser {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.nestedReplyDate {
+  font-size: 11px;
+  color: #64748b;
+}
+
+.nestedReplyBody {
+  margin: 0;
+  font-size: 13px;
+  color: #334155;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.noRepliesText {
+  margin: 0;
+  font-size: 13px;
+  color: #64748b;
+  font-style: italic;
+}
+
+/* Input Form Layout */
+.nestedReplyForm {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.nestedReplyInput {
+  flex: 1;
+  min-height: 36px;
+  padding: 6px 12px;
+  box-sizing: border-box;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #ffffff;
+  font-size: 13px;
+  color: #0f172a;
+  outline: none;
+}
+
+.nestedReplyInput:focus {
+  border-color: #fb923c;
+}
+
+/* Orange Submit Button (Applies to both Light and Dark themes) */
+.nestedReplySubmit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 6px;
+  color: #ffffff;
+  background: #ff6d11; /* Vibrant orange matching your primary accent action buttons */
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.nestedReplySubmit:hover:not(:disabled) {
+  background: #fb923c;
+}
+
+.nestedReplySubmit:disabled {
+  background: #cbd5e1;
+  color: #94a3b8;
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.nestedReplyError {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  color: #b91c1c;
+  background: #fef2f2;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+
+.readMoreButton {
+  background: none;
+  border: none;
+  color: #475569;
+  font-weight: 700;
+  padding-left: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: inherit;
+  transition: color 0.15s ease;
+}
+
+.readMoreButton:hover {
+  color: #000000;
+}
+
+:global(html[data-theme="dark"]) .back,
+:global(html[data-theme="dark"]) .author small,
+:global(html[data-theme="dark"]) .questionBody,
+:global(html[data-theme="dark"]) .answerCard > div:not(.editor),
+:global(html[data-theme="dark"]) .ownerActions button,
+:global(html[data-theme="dark"]) .editActions button,
+:global(html[data-theme="dark"]) .questionCard footer span,
+:global(html[data-theme="dark"]) .shareButton,
+:global(html[data-theme="dark"]) .emptyAnswers,
+:global(html[data-theme="dark"]) .ownNotice,
+:global(html[data-theme="dark"]) .editorToolbar,
+:global(html[data-theme="dark"]) .answerTools small,
+:global(html[data-theme="dark"]) .related > p,
+:global(html[data-theme="dark"]) .related a small,
+:global(html[data-theme="dark"]) .state,
+:global(html[data-theme="dark"]) .modal p {
+  color: var(--text-secondary);
+}
+
+:global(html[data-theme="dark"]) .questionCard,
+:global(html[data-theme="dark"]) .answerCard,
+:global(html[data-theme="dark"]) .answerForm,
+:global(html[data-theme="dark"]) .questionTitleInput,
+:global(html[data-theme="dark"]) .editor textarea,
+:global(html[data-theme="dark"]) .related a,
+:global(html[data-theme="dark"]) .state,
+:global(html[data-theme="dark"]) .modal {
+  border-color: var(--border);
+  color: var(--text-primary);
+  background: var(--surface);
+}
+
+:global(html[data-theme="dark"]) .questionCard footer,
+:global(html[data-theme="dark"]) .editor,
+:global(html[data-theme="dark"]) .editorToolbar,
+:global(html[data-theme="dark"]) .modal button {
+  border-color: var(--border);
+}
+
+:global(html[data-theme="dark"]) .avatar {
+  color: #e0f2fe;
+  background: #164e63;
+}
+
+:global(html[data-theme="dark"]) .answerAvatar {
+  color: #ccfbf1;
+  background: #115e59;
+}
+
+:global(html[data-theme="dark"]) .ownerActions button,
+:global(html[data-theme="dark"]) .editActions button,
+:global(html[data-theme="dark"]) .questionCard footer span,
+:global(html[data-theme="dark"]) .shareButton,
+:global(html[data-theme="dark"]) .emptyAnswers,
+:global(html[data-theme="dark"]) .ownNotice,
+:global(html[data-theme="dark"]) .editorToolbar,
+:global(html[data-theme="dark"]) .modal button {
+  background: var(--surface-container-low);
+}
+
+:global(html[data-theme="dark"]) .answerTools button {
+  border-color: #9a3412;
+  color: #fed7aa;
+  background: var(--surface-highlight);
+}
+
+:global(html[data-theme="dark"]) .related a:hover,
+:global(html[data-theme="dark"]) .ownerActions button:hover,
+:global(html[data-theme="dark"]) .shareButton:hover {
+  background: var(--surface-highlight);
+}
+
+:global(html[data-theme="dark"]) .error,
+:global(html[data-theme="dark"]) .inlineError {
+  border-color: #7f1d1d;
+  color: #fecaca;
+  background: #450a0a;
+}
+
+:global(html[data-theme="dark"]) .toast {
+  border-color: #166534;
+  color: #bbf7d0;
+  background: #052e16;
+}
+
+/* Fix the title color when dark mode is turned on */
+:global(html[data-theme="dark"]) .questionCard h1 {
+  color: var(--text-primary) !important;
+}
+  
+:global(html[data-theme="dark"]) .modal h2 {
+  color: var(--text-primary) !important;
+}
+:global(html[data-theme="dark"]) .modal button {
+  border: 1px solid var(--border) !important;
+  color: var(--text-secondary) !important;
+  background: transparent !important;
+  transition: all 0.2s ease !important;
+}
+
+:global(html[data-theme="dark"]) .modal button:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+:global(html[data-theme="dark"]) .modal button:last-child {
+  border: 1px solid var(--border) !important;
+  color: var(--text-secondary) !important;
+  background: transparent !important;
+}
+
+:global(html[data-theme="dark"]) .modal button:last-child:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+:global(html[data-theme="dark"]) .editActions button:not(:last-child) {
+  background: transparent !important;
+  color: var(--text-secondary) !important;
+  border: 1px solid var(--border) !important;
+}
+
+:global(html[data-theme="dark"]) .editActions button:not(:last-child):hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+/* ==========================================================================
+   NESTED REPLIES GLOBAL DARK THEME CONFIGURATIONS
+   ========================================================================== */
+
+/* 1. Sync Action button styles with dark .shareButton values */
+:global(html[data-theme="dark"]) .replyActionButton {
+  border-color: var(--border);
+  color: var(--text-secondary);
+  background: var(--surface-container-low);
+}
+
+:global(html[data-theme="dark"]) .replyActionButton:hover {
+  background: var(--surface-highlight);
+  color: white;
+  border-color: #fb923c;
+}
+
+/* 2. Container Panel Surfaces mapped into variable systems */
+:global(html[data-theme="dark"]) .repliesDropdownContent {
+  border-color: var(--border);
+  background: var(--surface);
+}
+
+:global(html[data-theme="dark"]) .nestedReplyItem {
+  border-color: var(--border);
+  background: var(--surface-container-low);
+}
+
+/* 3. Text Visibility Hierarchy */
+:global(html[data-theme="dark"]) .nestedReplyBody {
+  color: var(--text-secondary);
+}
+
+:global(html[data-theme="dark"]) .nestedReplyDate,
+:global(html[data-theme="dark"]) .noRepliesText {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+/* 4. Orange Author Username inside Dark Mode */
+:global(html[data-theme="dark"]) .nestedReplyUser {
+  color: white; /* Matches the vibrant action orange tone from the screen layout */
+}
+
+/* 5. Input form fields for Dark Mode */
+:global(html[data-theme="dark"]) .nestedReplyInput {
+  border-color: var(--border);
+  color: var(--text-primary);
+  background: var(--surface);
+}
+
+:global(html[data-theme="dark"]) .nestedReplyInput:focus {
+  border-color: #687382;
+}
+
+/* 6. Form Error alert block sync */
+:global(html[data-theme="dark"]) .nestedReplyError {
+  border-color: #7f1d1d;
+  color: #fecaca;
+  background: #450a0a;
+}
+
+:global(html[data-theme="dark"]) .readMoreButton {
+  color: #94a3b8;
+}
+
+:global(html[data-theme="dark"]) .readMoreButton:hover {
+  color: #ffffff;
+}
+
+
+

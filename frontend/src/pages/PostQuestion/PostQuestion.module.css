@@ -1,0 +1,278 @@
+.page {
+  display: grid;
+  gap: 30px;
+}
+.header span {
+  color: #ea580c;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.header h2 {
+  margin-top: 7px;
+  font-size: 31px;
+  letter-spacing: -0.03em;
+}
+.header p {
+  max-width: 720px;
+  margin-top: 8px;
+  color: #334155;
+  font-size: 17px;
+  line-height: 1.45;
+}
+.guidance {
+  padding: 29px 32px;
+  border: 1.5px solid #ff6d11;
+  border-radius: 13px;
+  background: #f1f5f9;
+}
+.guidance h3 {
+  font-size: 20px;
+}
+.guidance > p,
+.guidance li {
+  color: #334155;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.guidance > p {
+  margin-top: 8px;
+}
+.guidance h4 {
+  margin: 20px 0 6px;
+  font-size: 16px;
+}
+.guidance ul {
+  padding-left: 19px;
+}
+.guidance li + li {
+  margin-top: 4px;
+}
+.formCard {
+  padding: 50px 48px 44px;
+  border: 1px solid #dbe3ee;
+  border-radius: 16px;
+  background: #fff;
+}
+.field + .field {
+  margin-top: 31px;
+}
+.field label,
+.field small {
+  display: block;
+}
+.field label {
+  font-size: 14px;
+  font-weight: 700;
+}
+.field small {
+  margin: 2px 0 8px;
+  color: #475569;
+  font-size: 12px;
+}
+.field input {
+  width: 100%;
+  height: 54px;
+  padding: 0 23px;
+  border: 1px solid #dbe3ee;
+  border-radius: 8px;
+  color: #0f172a;
+  font-size: 16px;
+}
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #94a3b8;
+}
+.editor {
+  overflow: hidden;
+  border: 1px solid #dbe3ee;
+  border-radius: 8px;
+}
+.editorToolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 41px;
+  padding: 0 12px;
+  color: #475569;
+  background: #f1f5f9;
+  border-bottom: 1px solid #dbe3ee;
+}
+.formatButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  color: #475569;
+  background: transparent;
+  cursor: pointer;
+}
+.formatButton:hover {
+  color: #ea580c;
+  background: #fff;
+}
+.editorToolbar span {
+  margin-left: auto;
+  font-size: 12px;
+}
+.editor textarea {
+  display: block;
+  width: 100%;
+  min-height: 255px;
+  padding: 18px;
+  resize: vertical;
+  border: 0;
+  color: #0f172a;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.coachRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 30px;
+}
+.coachButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 15px;
+  border: 1px solid #e2e8f0;
+  border-radius: 7px;
+  color: #64748b;
+  background: #f8fafc;
+  font-size: 14px;
+  font-weight: 600;
+}
+.coachButton:hover:not(:disabled) {
+  color: #ea580c;
+  border-color: #fdba74;
+}
+.coachRow p {
+  color: #475569;
+  font-size: 12px;
+}
+.coachPanel {
+  margin-top: 16px;
+  padding: 14px 17px;
+  border: 1px solid #fed7aa;
+  border-radius: 8px;
+  color: #7c2d12;
+  background: #fff7ed;
+}
+.coachPanel h3 {
+  font-size: 14px;
+}
+.coachPanel ul {
+  margin: 6px 0 0 18px;
+  font-size: 13px;
+}
+.coachPanel li + li {
+  margin-top: 3px;
+}
+.error {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border: 1px solid #fecaca;
+  border-radius: 7px;
+  color: #b91c1c;
+  background: #fef2f2;
+  font-size: 14px;
+}
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 24px;
+  margin-top: 47px;
+  padding-top: 32px;
+  border-top: 1px solid #dbe3ee;
+}
+.cancel,
+.submit {
+  border: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+.cancel {
+  padding: 10px 8px;
+  color: #334155;
+  background: transparent;
+}
+.submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 215px;
+  justify-content: center;
+  padding: 13px 19px;
+  border-radius: 8px;
+  color: #fff;
+  background: #ff9b5b;
+}
+.submit:not(:disabled):hover {
+  background: #ff6d11;
+}
+.submit:disabled {
+  opacity: 0.7;
+}
+@media (max-width: 700px) {
+  .formCard {
+    padding: 25px 20px;
+  }
+  .guidance {
+    padding: 24px;
+  }
+  .actions {
+    margin-top: 28px;
+  }
+  .submit {
+    min-width: auto;
+  }
+}
+
+:global(html[data-theme="dark"]) .header p,
+:global(html[data-theme="dark"]) .guidance > p,
+:global(html[data-theme="dark"]) .guidance li,
+:global(html[data-theme="dark"]) .field small,
+:global(html[data-theme="dark"]) .editorToolbar,
+:global(html[data-theme="dark"]) .coachRow p,
+:global(html[data-theme="dark"]) .cancel {
+  color: var(--text-secondary);
+}
+
+:global(html[data-theme="dark"]) .guidance,
+:global(html[data-theme="dark"]) .editorToolbar,
+:global(html[data-theme="dark"]) .coachButton {
+  border-color: var(--border);
+  background: var(--surface-container-low);
+}
+
+:global(html[data-theme="dark"]) .formCard,
+:global(html[data-theme="dark"]) .field input,
+:global(html[data-theme="dark"]) .editor textarea {
+  border-color: var(--border);
+  color: var(--text-primary);
+  background: var(--surface);
+}
+
+:global(html[data-theme="dark"]) .editor,
+:global(html[data-theme="dark"]) .actions {
+  border-color: var(--border);
+}
+
+:global(html[data-theme="dark"]) .coachPanel {
+  border-color: #9a3412;
+  color: #fed7aa;
+  background: var(--surface-highlight);
+}
+
+:global(html[data-theme="dark"]) .error {
+  border-color: #7f1d1d;
+  color: #fecaca;
+  background: #450a0a;
+}
